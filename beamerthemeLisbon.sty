@@ -1,0 +1,27 @@
+% Copyright 2013 Dario Nascimento
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\mode<presentation>
+
+\DeclareOptionBeamer{alternativeTitlePage}[true]{\PassOptionsToPackage{alternativeTitlePage=#1}{beamerinnerthemecascais}}
+\DeclareOptionBeamer{titlePageLogo}{\PassOptionsToPackage{titlePageLogo=#1}{beamerinnerthemecascais}}
+\DeclareOptionBeamer{titlePageSecondLogo}{\PassOptionsToPackage{titlePageSecondLogo=#1}{beamerinnerthemecascais}}
+\DeclareOptionBeamer{pageofpages}{\PassOptionsToPackage{pageofpages=#1}{beamerouterthemeericeira}}
+\DeclareOptionBeamer{titleLine}[true]{\PassOptionsToPackage{titleLine=#1}{beamerouterthemeericeira}}
+
+\ProcessOptionsBeamer
+%Inner Themes: An inner theme specifies how certain elements of a presentation are typeset. This includes all elements that are at the “inside” of the frame, that is, that are not part of the headline, footline, or sidebars. This includes all enumerations, itemize environments, block environments, theorem environments, or the table of contents. For example, an inner theme might specify that in an enumeration the number should be typeset without a dot and that a small circle should be shown behind it. The inner theme would not specify what color should be used for the number or the circle (this is the job of the color theme) nor which font should be used (this is the job of the font theme).
+\useinnertheme{cascais}
+
+\useoutertheme{ericeira}
+\usecolortheme{lisbon}
+
+%Hide the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\mode
+<all>
