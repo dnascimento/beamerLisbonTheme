@@ -6,7 +6,14 @@
 % 2. under the GNU Public License.
 
 \mode<presentation>
-\useoutertheme{sidebar}%PROPERTIES TO DISABLE FIRST PAGE
+\useoutertheme{sidebar}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % String used between the current page and the total page count.
 \def\beamer@ericeira@pageofpages{/}
@@ -48,9 +55,9 @@
   } %
   % First line.
   \hbox{%
-  \begin{beamercolorbox}[wd=.2\paperwidth,ht=\beamer@ericeira@lineup,dp=0pt]{}%
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=\beamer@ericeira@lineup,dp=0pt]{}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.8\paperwidth,ht=\beamer@ericeira@lineup,dp=0pt]{lineup}%
+  \begin{beamercolorbox}[wd=.85\paperwidth,ht=\beamer@ericeira@lineup,dp=0pt]{lineup}%
   \end{beamercolorbox}%
   } %
   % Second line.
@@ -60,51 +67,85 @@
   } %
   % Third line.
   \hbox{%
-  \begin{beamercolorbox}[wd=.1\paperwidth,ht=\beamer@ericeira@linebottom,dp=0pt]{}%
+  \begin{beamercolorbox}[wd=.07\paperwidth,ht=\beamer@ericeira@linebottom,dp=0pt]{}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.9\paperwidth,ht=\beamer@ericeira@linebottom,dp=0pt]{linebottom}%
+  \begin{beamercolorbox}[wd=.93\paperwidth,ht=\beamer@ericeira@linebottom,dp=0pt]{linebottom}%
   \end{beamercolorbox}%
   }%
 
 }
 
-\defbeamertemplate*{headline}{ericeira theme}[sidebar]
+%Set sidebar width
+\beamer@sidebarwidth=3.0\baselineskip
+
+\setbeamertemplate{sidebar \beamer@sidebarside}
 {
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=\headerheight,dp=0pt]{page header}%
-  \end{beamercolorbox}%
-  } %
-  \vskip0pt%
+
+  \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+      \usebeamercolor[bg]{logo}%
+      \vrule width\beamer@sidebarwidth height \beamer@headheight%
+      \hskip-\beamer@sidebarwidth%
+      \hbox to \beamer@sidebarwidth{\hss\vbox to
+        \beamer@headheight{\vss\hbox{\hskip27\color{fg}\insertlogo}\vss}\hss}%
+  \end{beamercolorbox}
+
+  \beamer@tempdim=\beamer@sidebarwidth%
+  \advance\beamer@tempdim by -6pt%
+  \insertverticalnavigation{\beamer@sidebarwidth}%
+  \ifx\beamer@sidebarside\beamer@lefttext%
+  \else%
+    \usebeamercolor{normal text}%
+    \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+    \vskip2pt%
+  \fi%
+  \vfill
+  {\smash{\hspace*{\beamer@sidebarwidth}\textcolor{gray!50}{\rule{1pt}{\paperheight}}}}
+}%
+
+\setbeamertemplate{section in sidebar}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
 }
+\setbeamertemplate{section in sidebar shaded}
+{%
+  \vbox{%
+    \vskip1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar shaded}{\insertsectionheadnumber
+~\insertsectionhead}%
+  }%
+}
+
+
+
+\defbeamertemplate*{headline}{ericeira theme}
+{%
+
+}
+
+
+
 
 \defbeamertemplate*{frametitle}{ericeira theme}[1][left]
 {
-  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-  \@tempdima=\textwidth%
-  \advance\@tempdima by\beamer@leftmargin%
-  \advance\@tempdima by\beamer@rightmargin%
-  \vbox{}\vskip-.5\beamer@leftmargin%
-  \begin{beamercolorbox}[sep=\beamer@leftmargin,#1,wd=\the\@tempdima]{}
-    \usebeamerfont{frametitle}\usebeamercolor[bg]{framesubtitle}%
-    \vbox{}\vskip0ex%
-    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
-    \strut\insertframetitle\strut\par%
-    {%
-      \ifx\insertframesubtitle\@empty%
-      \else%
-      {\usebeamerfont{framesubtitle}\usebeamercolor[bg]{framesubtitle}\insertframesubtitle\strut\par}%
-      \fi
-    }%
-    \vskip-1ex%
-    \if@tempswa\else\vskip-\beamer@leftmargin\fi
-  \end{beamercolorbox}%
-  \def\beamer@ericeira@truetext{true}%
-  \ifx\beamer@ericeira@titleLine\beamer@ericeira@truetext%
-    \vskip-.5\beamer@leftmargin%
+\vbox to \beamer@headheight{%
+    \vfil
+    \leftskip=-\beamer@leftmargin%
+    \advance\leftskip by0.5cm%
+    \rightskip=-\beamer@rightmargin%
+    \advance\rightskip by0.3cm plus1fil%
+    {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\strut\insertframetitle\strut\par}%
+    {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par}%
+    \vskip-.9\beamer@leftmargin%
     \begin{beamercolorbox}[wd=\textwidth,ht=.1ex,dp=0ex]{linemid}%
     \end{beamercolorbox}%
-  \fi
+    \vbox{}%
+    \vskip-1em%
+    \vfil
+  }%
 }
 
 % Frame title continuations, default
@@ -113,7 +154,7 @@
 \defbeamertemplate*{sidebar right}{ericeira theme}
 {
   \vskip.1\beamer@leftmargin%
-  \llap{\insertlogo\hskip.5\beamer@leftmargin}%
+  \llap{\hskip.5\beamer@leftmargin}%
   \vfill%
 }
 
