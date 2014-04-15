@@ -1,0 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dario Nascimento (dario.nascimento@tecnico.ulisboa.pt)
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\setbeameroption{show notes} 
+\makeatletter
+ \def\beamer@framenotesbegin{% at beginning of slide
+   \gdef\beamer@noteitems{}%
+   \gdef\beamer@notes{{}}% used to be totally empty.
+ }
+\makeatother
+\usepackage{../beamernoteslisbon}
+\input{../lisbon.tex}

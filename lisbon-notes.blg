@@ -1,14 +1,14 @@
 This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: lisbon.aux
+The top-level auxiliary file: lisbon-notes.aux
 A level-1 auxiliary file: sections/content.aux
 A level-1 auxiliary file: sections/end.aux
-I found no \citation commands---while reading file lisbon.aux
-I found no \bibdata command---while reading file lisbon.aux
-I found no \bibstyle command---while reading file lisbon.aux
+I found no \citation commands---while reading file lisbon-notes.aux
+I found no \bibdata command---while reading file lisbon-notes.aux
+I found no \bibstyle command---while reading file lisbon-notes.aux
 You've used 0 entries,
             0 wiz_defined-function locations,
-            85 strings with 522 characters,
+            85 strings with 534 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0

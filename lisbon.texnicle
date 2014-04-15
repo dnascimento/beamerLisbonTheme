@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>73E6FB32-F31E-4DDD-B349-2082CAA138BC</UUID>
-        <nextObjectID>109</nextObjectID>
+        <nextObjectID>110</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -35,7 +35,7 @@
 		</data>
                         <key>Settings</key>
                         <data>
-		mHTm1DKCpy7s8hBt/RyeFdzSLbc3P1mMLc/tr4BIxkc=
+		XWN4f49S6jLtf2g0hZok72bJ408wwyCX3ADwssmzwt0=
 		</data>
                         <key>TeXFile</key>
                         <data>
@@ -50,7 +50,7 @@
                     <integer>3</integer>
                     <key>NSStoreModelVersionIdentifiers</key>
                     <array>
-                        <string>13</string>
+                        <string>15</string>
                     </array>
                     <key>kMDItemKeywords</key>
                     <array>
@@ -60,7 +60,51 @@
             </plist>
         </metadata>
     </databaseInfo>
-    <object type="SETTINGS" id="z102">
+    <object type="FILE" id="z102">
+        <attribute name="wasopen" type="bool">-1</attribute>
+        <attribute name="lasteditdate" type="date">418413760.81816798448562622070</attribute>
+        <attribute name="istext" type="bool">0</attribute>
+        <attribute name="fileloaddate" type="date">418413760.81816500425338745117</attribute>
+        <attribute name="extension" type="string">png</attribute>
+        <attribute name="sortindex" type="int32">5</attribute>
+        <attribute name="name" type="string">intrusion.png</attribute>
+        <attribute name="isexpanded" type="bool">0</attribute>
+        <attribute name="filepath" type="string">./img/intrusion.png</attribute>
+        <relationship name="parent" type="1/1" destination="PROJECTITEM" idrefs="z104"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
+        <relationship name="mainfileofproject" type="1/1" destination="PROJECT"></relationship>
+        <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
+        <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
+    </object>
+    <object type="FOLDER" id="z103">
+        <attribute name="sortindex" type="int32">0</attribute>
+        <attribute name="name" type="string">sections</attribute>
+        <attribute name="isexpanded" type="bool">1</attribute>
+        <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
+        <relationship name="children" type="0/0" destination="PROJECTITEM" idrefs="z108 z109"></relationship>
+    </object>
+    <object type="FOLDER" id="z104">
+        <attribute name="sortindex" type="int32">4</attribute>
+        <attribute name="name" type="string">img</attribute>
+        <attribute name="isexpanded" type="bool">0</attribute>
+        <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
+        <relationship name="children" type="0/0" destination="PROJECTITEM" idrefs="z102"></relationship>
+    </object>
+    <object type="PROJECT" id="z105">
+        <attribute name="type" type="string">PDFLaTeX</attribute>
+        <attribute name="name" type="string">lisbon</attribute>
+        <attribute name="folder" type="string">/Users/darionascimento/Tese/Presentation</attribute>
+        <relationship name="mainfile" type="1/1" destination="FILE" idrefs="z107"></relationship>
+        <relationship name="selected" type="1/1" destination="FILE" idrefs="z109"></relationship>
+        <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z106"></relationship>
+        <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z110"></relationship>
+        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z102 z107 z104 z108 z109 z103"></relationship>
+    </object>
+    <object type="SETTINGS" id="z106">
+        <attribute name="outputdirectory" type="string"></attribute>
+        <attribute name="stoponerror" type="bool">1</attribute>
         <attribute name="showstatusbar" type="bool">1</attribute>
         <attribute name="openconsole" type="bool">1</attribute>
         <attribute name="ncompile" type="int16">3</attribute>
@@ -70,98 +114,74 @@
         <attribute name="doliveupdate" type="bool">0</attribute>
         <attribute name="dobibtex" type="bool">1</attribute>
         <attribute name="bibtexcommand" type="string">bibtex</attribute>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
     </object>
-    <object type="PROJECT" id="z103">
-        <attribute name="type" type="string">PDFLaTeX</attribute>
-        <attribute name="name" type="string">lisbon</attribute>
-        <attribute name="folder" type="string">/Users/darionascimento/Presentation</attribute>
-        <relationship name="mainfile" type="1/1" destination="FILE" idrefs="z106"></relationship>
-        <relationship name="selected" type="1/1" destination="FILE" idrefs="z109"></relationship>
-        <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z102"></relationship>
-        <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z104"></relationship>
-        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z107 z105 z109 z108 z106"></relationship>
-    </object>
-    <object type="UISETTINGS" id="z104">
-        <attribute name="showlogwarningitems" type="bool">0</attribute>
-        <attribute name="showloginfoitems" type="bool">0</attribute>
-        <attribute name="showlogerroritems" type="bool">1</attribute>
-        <attribute name="pdfviewscrollrect" type="string">{{0, 0}, {0, 0}}</attribute>
-        <attribute name="showpdfthumbnails" type="bool">0</attribute>
-        <attribute name="selectedcontrolstab" type="int16">6</attribute>
-        <attribute name="maxoutlinedepth" type="int16">7</attribute>
-        <attribute name="logoutputlevel" type="int16">0</attribute>
-        <attribute name="editorwidth" type="float">656</attribute>
-        <attribute name="controlswidth" type="float">223</attribute>
-        <attribute name="consoleview" type="int16">1</attribute>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
-    </object>
-    <object type="FOLDER" id="z105">
-        <attribute name="sortindex" type="int32">3</attribute>
-        <attribute name="name" type="string">img</attribute>
-        <attribute name="isexpanded" type="bool">0</attribute>
-        <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
-        <relationship name="children" type="0/0" destination="PROJECTITEM" idrefs="z108"></relationship>
-    </object>
-    <object type="TEXFILE" id="z106">
+    <object type="TEXFILE" id="z107">
         <attribute name="wasopen" type="bool">1</attribute>
-        <attribute name="visiblerect" type="string">{{0, 192}, {604, 319}}</attribute>
-        <attribute name="lasteditdate" type="date">418554821.13331401348114013672</attribute>
+        <attribute name="visiblerect" type="string">{{0, 304}, {604, 319}}</attribute>
+        <attribute name="lasteditdate" type="date">419233792.90758502483367919922</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">418554821.37027800083160400391</attribute>
+        <attribute name="fileloaddate" type="date">419238864.99186301231384277344</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{975, 0}</attribute>
-        <attribute name="sortindex" type="int32">2</attribute>
+        <attribute name="cursor" type="string">{1382, 0}</attribute>
+        <attribute name="sortindex" type="int32">3</attribute>
         <attribute name="name" type="string">lisbon.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
         <attribute name="filepath" type="string">./lisbon.tex</attribute>
         <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
-        <relationship name="mainfileofproject" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
+        <relationship name="mainfileofproject" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
         <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
-    <object type="FOLDER" id="z107">
-        <attribute name="sortindex" type="int32">0</attribute>
-        <attribute name="name" type="string">sections</attribute>
+    <object type="TEXFILE" id="z108">
+        <attribute name="wasopen" type="bool">0</attribute>
+        <attribute name="visiblerect" type="string">{{0, 0}, {640, 318}}</attribute>
+        <attribute name="lasteditdate" type="date">419232704.53445398807525634766</attribute>
+        <attribute name="istext" type="bool">1</attribute>
+        <attribute name="fileloaddate" type="date">419238865.00313997268676757812</attribute>
+        <attribute name="extension" type="string">tex</attribute>
+        <attribute name="cursor" type="string">{0, 0}</attribute>
+        <attribute name="sortindex" type="int32">1</attribute>
+        <attribute name="name" type="string">end.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
-        <relationship name="parent" type="1/1" destination="PROJECTITEM"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
-        <relationship name="children" type="0/0" destination="PROJECTITEM" idrefs="z109"></relationship>
-    </object>
-    <object type="FILE" id="z108">
-        <attribute name="wasopen" type="bool">-1</attribute>
-        <attribute name="lasteditdate" type="date">418413760.81816798448562622070</attribute>
-        <attribute name="istext" type="bool">0</attribute>
-        <attribute name="fileloaddate" type="date">418413760.81816500425338745117</attribute>
-        <attribute name="extension" type="string">png</attribute>
-        <attribute name="sortindex" type="int32">4</attribute>
-        <attribute name="name" type="string">intrusion.png</attribute>
-        <attribute name="isexpanded" type="bool">0</attribute>
-        <attribute name="filepath" type="string">./img/intrusion.png</attribute>
-        <relationship name="parent" type="1/1" destination="PROJECTITEM" idrefs="z105"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
+        <attribute name="filepath" type="string">./sections/end.tex</attribute>
+        <relationship name="parent" type="1/1" destination="PROJECTITEM" idrefs="z103"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
         <relationship name="mainfileofproject" type="1/1" destination="PROJECT"></relationship>
         <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="TEXFILE" id="z109">
-        <attribute name="visiblerect" type="string">{{0, 0}, {604, 319}}</attribute>
-        <attribute name="cursor" type="string">{73, 0}</attribute>
-        <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="lasteditdate" type="date">418554779.50137901306152343750</attribute>
+        <attribute name="wasopen" type="bool">2</attribute>
+        <attribute name="visiblerect" type="string">{{0, 73}, {604, 319}}</attribute>
+        <attribute name="lasteditdate" type="date">419238869.03014999628067016602</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">418554780.20378500223159790039</attribute>
+        <attribute name="fileloaddate" type="date">419238869.50802397727966308594</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="sortindex" type="int32">1</attribute>
+        <attribute name="cursor" type="string">{596, 0}</attribute>
+        <attribute name="sortindex" type="int32">2</attribute>
         <attribute name="name" type="string">content.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
         <attribute name="filepath" type="string">./sections/content.tex</attribute>
-        <relationship name="parent" type="1/1" destination="PROJECTITEM" idrefs="z107"></relationship>
-        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z103"></relationship>
+        <relationship name="parent" type="1/1" destination="PROJECTITEM" idrefs="z103"></relationship>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
         <relationship name="mainfileofproject" type="1/1" destination="PROJECT"></relationship>
         <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
+    </object>
+    <object type="UISETTINGS" id="z110">
+        <attribute name="showpdfthumbnails" type="bool">0</attribute>
+        <attribute name="showlogwarningitems" type="bool">0</attribute>
+        <attribute name="showloginfoitems" type="bool">0</attribute>
+        <attribute name="showlogerroritems" type="bool">1</attribute>
+        <attribute name="selectedcontrolstab" type="int16">0</attribute>
+        <attribute name="pdfviewscrollrect" type="string">{{0, 1520.9921671018387}, {620, 879.00783289816127}}</attribute>
+        <attribute name="maxoutlinedepth" type="int16">7</attribute>
+        <attribute name="logoutputlevel" type="int16">0</attribute>
+        <attribute name="editorwidth" type="float">656</attribute>
+        <attribute name="controlswidth" type="float">223</attribute>
+        <attribute name="consoleview" type="int16">1</attribute>
+        <relationship name="project" type="1/1" destination="PROJECT" idrefs="z105"></relationship>
     </object>
 </database>

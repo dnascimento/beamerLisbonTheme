@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dario Nascimento (dario.nascimento@tecnico.ulisboa.pt)
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pgfmorepages}
+\defbeamertemplate*{note page}{ericeira theme}
+{%
+  {%
+    \scriptsize
+    \insertvrule{\paperheight}{white!black}
+    \vskip-\paperheight
+    \nointerlineskip
+    \vbox{
+      \hskip-28pt\insertslideintonotes{0.6}%
+      \vskip-0.5\paperheight%
+      \nointerlineskip
+      \begin{pgfpicture}{0cm}{0cm}{0cm}{0cm}
+      \end{pgfpicture}
+    }
+    \nointerlineskip
+    \vskip0.50\paperheight
+    
+    \insertnote
+    }   
+}
+
+\pgfpagesdeclarelayout{notes page with look ahead}%
+{%
+  \edef\pgfpageoptionheight{\the\paperwidth}
+  \edef\pgfpageoptionwidth{\the\paperheight}
+  \def\pgfpageoptionborder{0pt}
+  \def\pgfpageoptionfirstshipout{1}
+  \def\pgfpageoptioninitialshipout{2}
+}%
+{%
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=3,%
+    physical pages=1,%
+    physical height=\the\paperheight,%
+    physical width=\the\paperwidth,%
+    current logical shipout=2,%
+    last logical shipout=2,%
+  }
+  \pgfpagesphysicalpage{1}{%
+    skip code={\ifnum\the\pgfactualpage=1\relax\pgfpagesshipfalse\fi}
+  }%
+  %current
+  \pgfpageslogicalpageoptions{1}%
+  {
+    resized width=\pgfphysicalwidth,%
+    resized height=\pgfphysicalheight,%
+    border shrink=\pgfpageoptionborder,%
+    center=\pgfpoint{.45\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  %next page
+  \pgfpageslogicalpageoptions{3}%
+  {
+    resized width=.55\pgfphysicalwidth,%
+    resized height=.55\pgfphysicalheight,%
+    border shrink=\pgfpageoptionborder,%
+    center=\pgfpoint{.720\pgfphysicalwidth}{.875\pgfphysicalheight},%
+    skip code={%
+      \ifvoid\csname pgfpages@box@2\endcsname\else
+      \setbox\csname pgfpages@box@3\endcsname=\copy\beamer@frameboxcopy\fi
+      }
+  }
+  %IGNORE
+  \pgfpagesphysicalpage{2}{%
+    skip code={\ifvoid\csname pgfpages@box@2\endcsname\pgfpagesshipfalse\fi}%
+  }%
+  \pgfpageslogicalpageoptions{2}%
+  {
+   
+  }%
+}
+
+\pgfpagesuselayout{notes page with look ahead}
